@@ -39,15 +39,18 @@ print("Nhập c: ", terminator: "")
 var cx = readLine() ?? ""
 var c = Int(cx) ?? 0
 
-Show()
 
 let delta, x1, x2, x: Float
 
 
 delta = Float(b*b - 4*a*c)
 
+if(a == 0){
+    print("Đây không là phương trình bận 2!")
+}
+else if delta >  0{
+    Show()
 
-if delta >  0{
     x1 = Float((-b + Int(sqrt(delta)))/(2*a))
     x2 = Float((-b - Int(sqrt(delta)))/(2*a))
     print("Phuong trinh co 2 nghiem phan biet: ")
@@ -56,9 +59,13 @@ if delta >  0{
 
 }
 else if delta == 0{
+    Show()
+
     x = Float(-b/(2*a))
     print("Phuong trinh co nghiem kep: x1 = x2 = \(x)")
 }
 else{
+    Show()
+
     print("Phuong trinh vo nghiem!")
 }
