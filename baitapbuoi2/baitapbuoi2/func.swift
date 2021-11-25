@@ -96,12 +96,13 @@ func findN() {
 }
 
 func hoTen() {
-    print("Nhập họ và tên (tên có 3 trữ): ", terminator: "")
-
-    if let fullname = readLine() {
-        let fullNameArr = fullname.components(separatedBy: " ")
-        print("Hiển thị: \(fullNameArr[0]) \(fullNameArr[2])")
+    print("Nhập họ và tên: ", terminator: "")
+    let fullname = readLine() ?? ""
+    let fullNameArr = fullname.components(separatedBy: " ")
+    if fullNameArr.count > 1{
+        print("Hiển thị: \(fullNameArr.first ?? "") \(fullNameArr.last ?? "")")
     }
+    
 }
 
 func last() {
