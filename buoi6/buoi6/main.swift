@@ -64,14 +64,23 @@ import Foundation
 //}
 
 
+//
+//func nameinput(com: @escaping (String) -> Void) {
+//    print("Nhập tên của bạn: ")
+//    let name = readLine() ?? ""
+//    com(name)
+//}
+//
+//nameinput{ input in
+//    print("Xin chào: \(input)")
+//
+//}
 
-func nameinput(com: @escaping (String) -> Void) {
-    print("Nhập tên của bạn: ")
-    let name = readLine() ?? ""
-    com(name)
-}
 
-nameinput{ input in
-    print("Xin chào: \(input)")
-
+for i in 100...200
+{
+    if ( i % 3 == 0 ){
+        print(i)
+    }
+    
 }
