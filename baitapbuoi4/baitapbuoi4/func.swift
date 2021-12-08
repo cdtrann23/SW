@@ -51,28 +51,66 @@ func sxgd() {
 
   
 func bai2() {
+//    var x: Int
+//    var max: Int = 0
+//    var i: Int
+//
+//    repeat{
+//        print("Nhập số nguyên dương X (x <= 10000): ", terminator: " ")
+//        x = Int(readLine() ?? "") ?? 0
+//    } while (x > 10000)
+//
+//    if(x == 0){
+//        max = 0
+//    }
+//
+//    repeat{
+//
+//        i = x % 10
+//        if(i > max){
+//            max = i
+//        }
+//    } while (x == x/10)
+//
+//    print("Số lớn nhất trong số \(x) là số: \(max)")
+    
+    
     var x: Int
-    var max: Int = 0
-    var i: Int
-    
-    repeat{
-        print("Nhập số nguyên dương X (x <= 10000): ", terminator: " ")
-        x = Int(readLine() ?? "") ?? 0
-    } while (x > 10000)
-    
-    if(x == 0){
-        max = 0
-    }
-
-    repeat{
+        repeat {
+            print("Nhập số < 10000: ")
+            let number = Int(readLine() ?? "0") ?? 0
+            x = number
+        } while (x > 10000)
         
-        i = x % 10
-        if(i > max){
-            max = i
+        /* Có 3 trường hợp:
+         - 10000 => số 0
+         - Từ 0 -> 9 => trả luôn kết quả là số đó
+         - Có 2 hoặc 3 hoặc 4 chữ số => thực hiện tách các chữ số rồi so sánh
+         */
+        
+        if x == 10000 {
+            print("Số lớn thứ 2 là số 0")
+        } else if (x>=0 && x<10) {
+            print("Số lớn thứ 2 là số \(x)")
+        } else {
+            let a = x/1000                  // Lấy số hàng nghìn
+            let b = (x - a*1000)/100        // Lấy số hàng trăm
+            let c = (x - a*1000 - b*100)/10 // Lấy số hàng chục
+            let d = x%10                    // Lấy số hàng đơn vị
+            
+            var arrInt = [a, b, c, d]
+            arrInt.sort()                   // Sắp xếp mảng tăng dần bằng hàm sort
+            arrInt.reverse()                // Đảo ngược mảng thành mảng giảm dần
+            print(arrInt)
+            
+            for i in 1..<arrInt.count {
+                if arrInt[i] != arrInt[i-1] {
+                    print("Số lớn thứ 2 là số: \(arrInt[i])")
+                    break
+                }
+            }
         }
-    } while (x == x/10)
-    
-    print("Số lớn nhất trong số \(x) là số: \(max)")
+
 }
 
 
