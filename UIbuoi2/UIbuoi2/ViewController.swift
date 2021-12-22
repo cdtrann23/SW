@@ -55,23 +55,23 @@ class ViewController: UIViewController {
         
         //uiview
         
-        UIView.animate(withDuration: 3){
-            self.blueView.transform = CGAffineTransform(translationX: self.view.bounds.width - self.blueView.bounds.width, y: 0)
-        }
+//        UIView.animate(withDuration: 3){
+//            self.blueView.transform = CGAffineTransform(translationX: self.view.bounds.width - self.blueView.bounds.width, y: 0)
+//        }
         
 //        UIView.animate(withDuration: 3){
 //            self.readView.transform = CGAffineTransform(translationX: self.view.bounds.width - self.readView.bounds.width, y: self.view.bounds.height - self.readView.bounds.height)
 //        }
         
-//        UIView.animate(withDuration: 5) {
-//            self.readView.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.height - self.readView.bounds.height)
-//        }completion: { _ in
-//            UIView.animate(withDuration: 3) {
-//                self.readView.transform = CGAffineTransform(translationX: self.view.bounds.width - self.readView.bounds.width, y: self.view.bounds.height - self.readView.bounds.height)
-//            }
+        UIView.animate(withDuration: 5) {
+            self.readView.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.height - self.readView.bounds.height)
+        }completion: { _ in
+            UIView.animate(withDuration: 3) {
+                self.readView.transform = CGAffineTransform(translationX: self.view.bounds.width - self.readView.bounds.width, y: self.view.bounds.height - self.readView.bounds.height)
+            }
             
             
-            
+
 //        UIView.animate(withDuration: 1) {
 //            self.readView.transform = CGAffineTransform(translationX: self.view.bounds.width - self.readView.bounds.height, y: 0)
 //        }completion: { _ in
@@ -86,13 +86,13 @@ class ViewController: UIViewController {
         
         //dịch chuyển ngang và ngược lại
         
-        UIView.animateKeyframes(withDuration: 5, delay: 0, options: [ .autoreverse]) {
-                self.readView.transform = CGAffineTransform(translationX: self.view.bounds.width - self.readView.bounds.width, y: 0)
-            self.readView.alpha = 0
-        }completion: { _ in
-            self.readView.transform = CGAffineTransform.identity
-            self.readView.alpha = 1
-        }
+//        UIView.animateKeyframes(withDuration: 5, delay: 0, options: [ .autoreverse]) {
+//                self.readView.transform = CGAffineTransform(translationX: self.view.bounds.width - self.readView.bounds.width, y: 0)
+//            self.readView.alpha = 0
+//        }completion: { _ in
+//            self.readView.transform = CGAffineTransform.identity
+//            self.readView.alpha = 1
+//        }
             
             
             
@@ -109,3 +109,4 @@ class ViewController: UIViewController {
 
 
 
+}
